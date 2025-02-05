@@ -69,4 +69,16 @@ class LinkedList
 
     return nil
   end
+
+  def to_s
+    super_string = ""
+    node = @head
+    while !node.nil?
+      super_string += "( #{node.value} ) -> "
+      node = node.next_node
+    end
+
+    super_string += "nil"
+    super_string
+  end
 end
