@@ -9,5 +9,10 @@ class LinkedList
     @head = node
   end
 
-  
+  def prepend(node)
+    if !@tail.nil?
+      @tail.next_node = node
+    end
+    @tail = node
+  end
 end
