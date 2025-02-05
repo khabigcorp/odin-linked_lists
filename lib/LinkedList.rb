@@ -24,4 +24,8 @@ class LinkedList
   def size
     @size
   end
+
+  def head
+    @head.value
+  end
 end
