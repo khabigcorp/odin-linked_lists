@@ -8,18 +8,31 @@ class LinkedList
   end
   
   def append(node)
-    node.next_node = @head
-    @head = node
+    add_node = Node.new
+    add_node.value = node
 
+    if !@tail.nil?
+      @tail.next_node = add_node
+    else
+      @head = add_node
+    end
+    
+    @tail = add_node
+    
     @size += 1
   end
 
   def prepend(node)
-    if !@tail.nil?
-      @tail.next_node = node
+    add_node = Node.new
+    add_node.value = node
+
+    if @head.nil?
+      @tail = add_node
     end
-    @tail = node
     
+    add_node.next_node = @head
+    @head = add_node
+
     @size += 1
   end
 
@@ -44,6 +57,7 @@ class LinkedList
   def pop
     self.at(@size-2).next_node = nil
     @tail = nil
+    @size -= 1
   end
 
   def contains?(value)
