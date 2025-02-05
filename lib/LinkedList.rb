@@ -32,4 +32,10 @@ class LinkedList
   def tail
     @tail.value
   end
+
+  def at(index)
+    node = @head
+    index.times { node = node.next_node }
+    node
+  end
 end
