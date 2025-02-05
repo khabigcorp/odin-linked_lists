@@ -38,4 +38,9 @@ class LinkedList
     index.times { node = node.next_node }
     node
   end
+
+  def pop
+    self.at(@size-2).next_node = nil
+    @tail = nil
+  end
 end
