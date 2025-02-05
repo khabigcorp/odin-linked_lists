@@ -55,4 +55,18 @@ class LinkedList
 
     return false
   end
+
+  def find(value)
+    node = @head
+    index = 0
+    while !node.nil?
+      if (node.value == value)
+        return index
+      end
+      index += 1
+      node = node.next_node
+    end
+
+    return nil
+  end
 end
