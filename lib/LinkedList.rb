@@ -28,4 +28,8 @@ class LinkedList
   def head
     @head.value
   end
+
+  def tail
+    @tail.value
+  end
 end
