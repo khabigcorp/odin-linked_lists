@@ -43,4 +43,16 @@ class LinkedList
     self.at(@size-2).next_node = nil
     @tail = nil
   end
+
+  def contains?(value)
+    node = @head
+    while !node.nil?
+      if (node.value == value)
+        return true
+      end
+      node = node.next_node
+    end
+
+    return false
+  end
 end
