@@ -1,3 +1,5 @@
+require './lib/Node.rb'
+
 class LinkedList
   def initialize
     @head = nil
