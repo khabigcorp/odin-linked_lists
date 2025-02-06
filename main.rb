@@ -23,3 +23,7 @@ puts list.contains?("turtle")
 puts list.contains?("cat")
 puts list.find("dog")
 puts list.find("hamster")
+
+puts list
+list.append('rabbit', 2)
+puts list
