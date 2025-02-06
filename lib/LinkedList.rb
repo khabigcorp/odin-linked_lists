@@ -114,7 +114,8 @@ class LinkedList
       previous_node = at(index-1)
       new_next_node = previous_node.next_node.next_node
       previous_node.next_node = new_next_node
-
+    end
+    @size -= 1
   end
 
   def to_s

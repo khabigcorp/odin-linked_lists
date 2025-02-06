@@ -27,3 +27,9 @@ puts list.find("hamster")
 puts list
 list.insert_at('rabbit', 0)
 puts list
+
+puts list 
+list.remove_at(0)
+puts list
+list.remove_at(2)
+puts list
