@@ -86,6 +86,22 @@ class LinkedList
     return nil
   end
 
+  def insert_at(value, index)
+    node = Node.new
+    node.value = value
+
+    previous_node = at(index-1)
+    if previous_node != null
+      previous_node.next_node = node
+      node.next_node = following_node
+      following_node = previous_node.next_node
+    else
+      append(node)
+    end
+  end
+
+  def 
+
   def to_s
     super_string = ""
     node = @head
