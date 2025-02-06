@@ -91,7 +91,6 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    puts "insert_at"
     previous_node = at(index-1)
     if !previous_node.nil?
       node = Node.new
@@ -99,6 +98,7 @@ class LinkedList
       following_node = previous_node.next_node
       previous_node.next_node = node
       node.next_node = following_node
+      @size += 1
     else
       prepend(value)
     end
@@ -106,7 +106,15 @@ class LinkedList
   end
 
   def remove_at(index)
-  
+    if index == @size - 1
+      pop
+    elsif index == 0
+      @head = @head.next_node
+    else
+      previous_node = at(index-1)
+      new_next_node = previous_node.next_node.next_node
+      previous_node.next_node = new_next_node
+
   end
 
   def to_s
