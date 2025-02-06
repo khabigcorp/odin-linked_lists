@@ -25,5 +25,5 @@ puts list.find("dog")
 puts list.find("hamster")
 
 puts list
-list.append('rabbit', 2)
+list.insert_at('rabbit', 0)
 puts list

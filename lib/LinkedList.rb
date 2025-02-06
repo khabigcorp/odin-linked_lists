@@ -49,6 +49,10 @@ class LinkedList
   end
 
   def at(index)
+    if index >= @size || index < 0
+      return nil
+    end
+
     node = @head
     index.times { node = node.next_node }
     node
@@ -87,20 +91,23 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    node = Node.new
-    node.value = value
-
+    puts "insert_at"
     previous_node = at(index-1)
-    if previous_node != null
+    if !previous_node.nil?
+      node = Node.new
+      node.value = value
+      following_node = previous_node.next_node
       previous_node.next_node = node
       node.next_node = following_node
-      following_node = previous_node.next_node
     else
-      append(node)
+      prepend(value)
     end
+    value
   end
 
-  def 
+  def remove_at(index)
+  
+  end
 
   def to_s
     super_string = ""
