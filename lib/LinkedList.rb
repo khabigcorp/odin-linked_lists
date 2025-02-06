@@ -59,6 +59,10 @@ class LinkedList
   end
 
   def pop
+    if @size == 0
+      return nil
+    end
+    
     self.at(@size-2).next_node = nil
     @tail = nil
     @size -= 1
@@ -106,6 +110,10 @@ class LinkedList
   end
 
   def remove_at(index)
+    if @size == 0
+      return nil
+    end
+
     if index == @size - 1
       pop
     elsif index == 0
